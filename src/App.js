@@ -7,16 +7,12 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 import { cyan, green } from '@material-ui/core/colors';
 
-import CssBaseline from "@material-ui/core/CssBaseline";
-import { CreateOwnPassword } from "./modules/auth/components/create-own-password";
-import { ResetPasswordRequest } from "./modules/auth/components/reset-password-request";
-
-const Dashboard = lazy(() => import("./modules/dashboard"));
-const NotFound = lazy(() => import("./Common/components/NotFound/NotFound"));
-const Auth = lazy(() => import("./modules/auth"));
-const ResetUpdatePassword = lazy(() => import("./modules/auth/components/reset-update-new-password"));
+import CssBaseline from '@material-ui/core/CssBaseline';
+// import './styles.scss';
+const Dashboard = lazy(() => import('./modules/dashboard'));
+const NotFound = lazy(() => import('./Common/components/NotFound/NotFound'));
+const Auth = lazy(() => import('./modules/auth'));
 const Layout = lazy(() => import('./Common/layouts/Layout'));
-const AdminLayout = lazy(() => import('./Common/layouts/AdminLayout'));
 
 const history = createBrowserHistory();
 const theme = createMuiTheme({
@@ -38,17 +34,14 @@ class App extends Component {
         <CssBaseline />
         <Router history={history}>
           {/* <RootHeader> </RootHeader> */}
-          <section className="content">
+          <section className="page_main_content_section">
             <Suspense fallback={<div>Loading...</div>}>
               <Switch>
                 <Route path="/layout" component={Layout} />
-                <Route path="/layout1" component={AdminLayout} />
+                <Route path="/ar/layout" component={Layout} />
                 <Route exact path="/" component={Auth} />
                 <Route path="/auth" component={Auth} />
                 <Route path="/dashboard" component={Dashboard} />
-                <Route path="/create-own-password" component={CreateOwnPassword} />
-                <Route path="/reset-password-request" component={ResetPasswordRequest} />
-                <Route path="/reset-update-password" component={ResetUpdatePassword} />
                 <Route path="*" component={NotFound} />
               </Switch>
             </Suspense>

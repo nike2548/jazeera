@@ -1,0 +1,66 @@
+@import "./themes.scss";
+
+html,
+body {
+//   min-height: 100vh;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  margin: 0;
+  padding: 0;
+//   color: #63666a;
+}
+
+@font-face {
+    font-family: "Droid Arabic Kufi";
+    src: url("../fonts/DroidArabicKufi.eot");
+    src: url("../fonts/DroidArabicKufi.eot?#iefix")
+        format("embedded-opentype"),
+      url("../fonts/DroidArabicKufi.woff2") format("woff2"),
+      url("../fonts/DroidArabicKufi.woff") format("woff"),
+      url("../fonts/DroidArabicKufi.ttf") format("truetype"),
+      url("../fonts/DroidArabicKufi.svg#DroidArabicKufi") format("svg");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Droid Arabic Kufi";
+    src: url("../fonts/DroidArabicKufi-Bold.eot");
+    src: url("../fonts/DroidArabicKufi-Bold.eot?#iefix")
+        format("embedded-opentype"),
+      url("../fonts/DroidArabicKufi-Bold.woff2") format("woff2"),
+      url("../fonts/DroidArabicKufi-Bold.woff") format("woff"),
+      url("../fonts/DroidArabicKufi-Bold.ttf") format("truetype"),
+      url("../fonts/DroidArabicKufi-Bold.svg#DroidArabicKufi-Bold")
+        format("svg");
+    font-weight: bold;
+    font-style: normal;
+  }
+
+.oriental-rtl{
+    direction: rtl;
+    font-family: "Droid Arabic Kufi";
+}
+
+.page_layout_container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.page_main_header{
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.page_main_inner_section{
+    // @include themify($themes) {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+    // background: themed('bgMain');
+    // }
+}

@@ -4,8 +4,9 @@ import MenuIcon from '@material-ui/icons/Menu';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 import DropDownIcon from '../../../assets/images/dropDown.svg';
-import hrmsLogo from '../../../assets/images/hrmsLogo.png';
+import hrmsLogo from '../../../assets/images/hrmsLogo.svg';
 import flagLogo from '../../../assets/images/flagLogo.png';
+import flagLogoAr from '../../../assets/images/arabic.svg';
 import profilePic from '../../../assets/images/profilePic.png';
 
 import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
@@ -14,102 +15,40 @@ import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import { Avatar } from '@material-ui/core';
 import './navbar.scss';
 
-// const styles = makeStyles(theme => ({
-//   drawerHide: {
-//     [theme.breakpoints.up('md')]: {
-//       display: 'none'
-//     }
-//   },
-//   drawerShow: {
-//     [theme.breakpoints.down('sm')]: {
-//       display: 'none'
-//     }
-//   },
-//   toolbar: {
-//     height: '69px',
-//     backgroundColor: '#002f6c'
-//   },
-//   centerAlign: {
-//     flex: 1
-//   },
-
-//   rightAlign: {
-//     marginLeft: 'auto'
-//   },
-//   hr: {
-//     width: '1px',
-//     height: '69px',
-//     opacity: '0.3',
-//     border: 'solid 1px #1565c0',
-//     backgroundColor: '#d8d8d8',
-//     marginLeft: '10px',
-//     marginRight: '10px'
-//   },
-//   navDropdowns: {
-//     position: 'static',
-//     fontFamily: 'Roboto',
-//     fontSize: '14px',
-//     fontWeight: 'normal',
-//     fontStretch: 'normal',
-//     fontStyle: 'normal',
-//     lineHeight: 'normal',
-//     letterSpacing: '0.13px',
-//     color: '#e8eaf6',
-//     cursor: 'pointer'
-//   },
-//   icons: {
-//     color: '#1565c0'
-//   },
-//   hrmsLogo: {
-//     height: '40px'
-//   },
-//   flagLogo: {
-//     height: '14px'
-//   },
-//   profilePic: {
-//     height: '32px',
-//     width: '32px'
-//   }
-// }));
-
 export default function NavBar({ changeLang, lang }) {
   return (
-    <div>
+    <div className="main_header_inner_section">
       <AppBar>
         {/* Desktop View */}
         <section>
           <Toolbar className={'toolbar'}>
-            <img src={hrmsLogo} className="hrms-logo" alt="Logo" />
-            <hr className="hr" />
+           <span className="logo_sec"> <img src={hrmsLogo} className="hrms-logo" alt="Logo" /></span>
             <span className="nav-dropdowns">
               DashBoard
-              <IconButton>
+              <IconButton className="dropdown-icon">
                 <img src={DropDownIcon} alt="D" />
               </IconButton>
             </span>
             <span className="nav-dropdowns">
               Organisation Setup
-              <IconButton>
+              <IconButton className="dropdown-icon">
                 <img src={DropDownIcon} alt="D" />
               </IconButton>
             </span>
             <span className="nav-dropdowns">
               ESS
-              <IconButton>
+              <IconButton className="dropdown-icon">
                 <img src={DropDownIcon} alt="D" />
               </IconButton>
             </span>
             <section className="right-align">
-              <span className="nav-dropdowns" onClick={changeLang}>
-                <img src={flagLogo} className="flag-logo" alt="F" />
+              <span className="nav-dropdowns language_sec" onClick={changeLang}>
+                <img src={ lang === 'ar' ? flagLogo : flagLogoAr} className="flag-logo" alt="F" />
                 {lang === 'en' ? 'Arabic' : 'English'}
-                <IconButton>
+                <IconButton className="dropdown-icon">
                   <img src={DropDownIcon} alt="D" />
                 </IconButton>
               </span>
-              <IconButton>
-                <hr className="hr" />
-              </IconButton>
               <IconButton>
                 <SearchIcon className="icons" />
               </IconButton>
@@ -119,10 +58,10 @@ export default function NavBar({ changeLang, lang }) {
               <IconButton>
                 <NotificationsNoneIcon className="icons" />
               </IconButton>
-              <IconButton>
+              <IconButton className="profile-pic-sec">
                 <Avatar alt="C" src={profilePic} className="profile-pic" />
               </IconButton>
-              <IconButton>
+              <IconButton className="dropdown-icon">
                 <img src={DropDownIcon} alt="D" />
               </IconButton>
             </section>

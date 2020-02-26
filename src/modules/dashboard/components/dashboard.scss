@@ -1,0 +1,7 @@
+@import "../../../assets/styles/themes.scss";
+
+.dashboard_main_container{
+    @include themify($themes) {
+        // background: themed('bgMain');
+    }
+}

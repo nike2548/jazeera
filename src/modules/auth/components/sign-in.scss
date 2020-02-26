@@ -1,0 +1,89 @@
+.login{
+  &__MainContainer{
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    overflow-y: auto;
+    // width: 100vw;
+    // & .container__login {
+    background: url('../../../assets/images/login-background.jpg') no-repeat center/cover;
+    // height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  &__header_logo{
+    text-align: center;
+  }
+  &__inner-section{
+    max-width: 350px;
+    margin: 25px 75px;
+  }
+  &__form{
+  width: 350px;
+    .MuiOutlinedInput-notchedOutline{
+      border-color: #78909c;
+    }
+    .MuiFormLabel-root{
+      color: #fff;
+
+    }
+    .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline{
+      border-color: #fff;
+    }
+    .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+      border-color: #fff;
+  }
+  }
+  &__btn_submit{
+    width: 100%;
+    background: #fbc02d;
+    margin-top: 20px;
+    &:hover{
+      background: #fbc02d;
+    }
+  }
+}
+
+// .loginContainer {
+//   & .loginContainer__logoContainer {
+//     height: 35%;
+//     color: white;
+//   }
+//   & .loginContainer__formContainer {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     height: 65%;
+//     & .loginContainer__formContainer__form {
+//       width: 70%;
+//       margin-top: 8px;
+//       & .loginContainer__formContainer__form_submit {
+//         margin: 24px 0px 16px;
+//       }
+//     }
+//     & .loginContainer__formContainer__loginText {
+//       font-family: Roboto;
+//       font-size: 20px;
+//       font-weight: 500;
+//       font-stretch: normal;
+//       font-style: normal;
+//       line-height: normal;
+//       letter-spacing: 0.15px;
+//       color: #78909c;
+//     }
+//   }
+// }
+.loginFonts {
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #78909c;
+}
+.input {
+  color: #ffffff;
+}
